@@ -23,12 +23,6 @@ Below are the tasks that you will need to complete in order to finish the lab:
 
 * Create a static controller that inherits from the application controller and holds the ```hello_world``` action. You can have the call to the view file occur using either the implicit or explicit processes.
 
-* Create a file in the views' directory that will be called by the static controller's ```hello_world``` action, and add the heading 
-
-```html
-<h1>Hello World</h1>
-```
-
-to the file (the test is case sensitive, so make sure you enter it as shown).
+* Create a file in the views' directory that will be called by the static controller's ```hello_world``` action, and add the heading ```<h1>Hello World</h1>``` to the file (the test is case sensitive, so make sure you enter it as shown).
 
 You can test this out in the browser and via the RSpec test suite.
