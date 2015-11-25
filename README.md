@@ -12,7 +12,7 @@ In this lab you will integrate a static route so that the application will rende
 
 ## Testing
 
-The RSpec/Capybara test suite currently is not passing, to run the tests, run the command ```bundle exec rspec```, you will have passed the lab when the test is passing.
+The RSpec/Capybara test suite currently is not passing, to run the tests, you will have passed the lab when the test is passing.
 
 
 ## Instructions

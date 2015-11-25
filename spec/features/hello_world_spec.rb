@@ -1,9 +1,8 @@
 require 'rails_helper'
 
-feature 'routing is working properly' do
-
-  scenario 'on the /hello_world page' do
-    visit hello_world_path
+describe 'routing is working properly' do
+  it 'on the /hello_world page' do
+    visit "/hello_world"
     expect(page).to have_css("h1", text: "Hello World")
   end
 end
