@@ -19,3 +19,5 @@ Respond to a /hello_world url
 provide a static controller with a hello_world action
 provide a static/hello_world.html.erb view
 get /hello_world renders <h1>hello World</h1>
+
+<a href='https://learn.co/lessons/rails-hello-world-lab' data-visibility='hidden'>View this lesson on Learn.co</a>
