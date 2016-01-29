@@ -26,3 +26,5 @@ Below are the tasks that you will need to complete in order to finish the lab:
 * Create a file in the views' directory that will be called by the static controller's ```hello_world``` action, and add the heading ```<h1>Hello World</h1>``` to the file (the test is case sensitive, so make sure you enter it as shown).
 
 You can test this out in the browser and via the RSpec test suite.
+
+<p data-visibility='hidden'>View <a href='https://learn.co/lessons/rails-hello-world-lab' title='Rails Hello World'>Rails Hello World</a> on Learn.co and start learning to code for free.</p>
