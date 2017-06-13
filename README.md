@@ -12,7 +12,7 @@ In this lab you will integrate a static route so that the application will rende
 
 ## Testing
 
-The RSpec/Capybara test suite currently is not passing, to run the tests, you will have passed the lab when the test is passing.
+The RSpec/Capybara test suite is currently not passing. Run the tests, and you will have passed the lab when the tests are passing.
 
 
 ## Instructions
@@ -28,3 +28,5 @@ Below are the tasks that you will need to complete in order to finish the lab:
 You can test this out in the browser and via the RSpec test suite.
 
 <p data-visibility='hidden'>View <a href='https://learn.co/lessons/rails-hello-world-lab' title='Rails Hello World'>Rails Hello World</a> on Learn.co and start learning to code for free.</p>
+
+<p class='util--hide'>View <a href='https://learn.co/lessons/rails-hello-world-lab'>Rails Hello World</a> on Learn.co and start learning to code for free.</p>
