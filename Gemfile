@@ -42,7 +42,7 @@ group :development, :test do
   gem 'spring'
 
   gem 'rspec-rails', '~> 3.7'
-  gem 'factory_girl_rails'
+  gem 'factory_bot'
   gem 'capybara'
   gem 'database_cleaner'
 end
