@@ -1,17 +1,7 @@
 Rails.application.routes.draw do
-  get 'users/create'
+ 
 
-  get 'users/new'
-
-  get 'users/edit'
-
-  get 'users/update'
-
-  get 'users/destroy'
-
-  get 'users/index'
-
-  get 'users/show'
+  resources :users, only: [:index, :create, :new]
 
   get 'recipes/create'
 
