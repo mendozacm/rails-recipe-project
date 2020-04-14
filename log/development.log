@@ -3301,3 +3301,167 @@ app/controllers/users_controller.rb:19:in `create'
   Rendering /home/cesarm/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
   Rendered /home/cesarm/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
   Rendered /home/cesarm/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (86.8ms)
+Started POST "/users" for 127.0.0.1 at 2020-04-14 16:37:17 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"AltPVHmdObfnrFZ4OciWs8mZ2oOp2GZRk+fVltX8d2Lp/JvK2KddtMbnSO1NQNG3H0B9xQBZOGLUkUHlsSdu5g==", "user"=>{"name"=>"secure", "username"=>"securty", "bio"=>"scutie", "password"=>"[FILTERED]"}, "commit"=>"Submit User"}
+Unpermitted parameter: bio
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "securty"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "securty"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Redirected to http://localhost:3000/users/new
+Completed 302 Found in 338ms (ActiveRecord: 4.9ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2020-04-14 16:37:18 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 356ms (Views: 346.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2020-04-14 16:37:37 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"iHNgSqHahkhqtoXJ2BS1iFZHEBlojplGnhub3GY5sK9j1LTUAODiS0v9m1ysnPKMgJ63X8EPx3XZbQ+vAuKpKw==", "user"=>{"name"=>"cesarmendoza", "username"=>"ilovefanny", "bio"=>"im so in love", "password"=>"[FILTERED]"}, "commit"=>"Submit User"}
+Unpermitted parameter: bio
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "ilovefanny"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "ilovefanny"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Redirected to http://localhost:3000/users/new
+Completed 302 Found in 266ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2020-04-14 16:37:38 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 81ms (Views: 75.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2020-04-14 16:38:17 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 94ms (Views: 88.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2020-04-14 16:38:38 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"eB+kQJN3QydEh7i3MCTvoKAC85N/WKDF2rV5Xby6c2yTuHDeMk0nJGXMpiJErKikdttU1dbZ/vadw+0u2GFq6A==", "user"=>{"name"=>"fanyy", "username"=>"sunshine", "bio"=>"i love cesar", "password"=>"[FILTERED]"}, "commit"=>"Submit User"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "sunshine"], ["LIMIT", 1]]
+  [1m[35mSQL (1.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "username", "bio", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "fanyy"], ["username", "sunshine"], ["bio", "i love cesar"], ["created_at", "2020-04-14 21:38:38.992645"], ["updated_at", "2020-04-14 21:38:38.992645"], ["password_digest", "$2a$12$KQSjAe/02LHREmr3LVxS3eqdgaH5V4LxH7TAxWVYxkNLtqcNz4m7W"]]
+  [1m[35m (41.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? AND ("users"."id" != ?) LIMIT ?[0m  [["username", "sunshine"], ["id", 8], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to 
+Completed 500 Internal Server Error in 333ms (ActiveRecord: 47.0ms)
+
+
+  
+ActionController::UrlGenerationError (No route matches {:action=>"home", :controller=>"welcome"}):
+  
+app/controllers/users_controller.rb:19:in `create'
+  Rendering /home/cesarm/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/cesarm/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/cesarm/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.6ms)
+  Rendering /home/cesarm/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/cesarm/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendering /home/cesarm/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/cesarm/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/cesarm/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (72.3ms)
+Started POST "/users" for 127.0.0.1 at 2020-04-14 16:38:59 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"eB+kQJN3QydEh7i3MCTvoKAC85N/WKDF2rV5Xby6c2yTuHDeMk0nJGXMpiJErKikdttU1dbZ/vadw+0u2GFq6A==", "user"=>{"name"=>"fanyy", "username"=>"sunshine", "bio"=>"i love cesar", "password"=>"[FILTERED]"}, "commit"=>"Submit User"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "sunshine"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "sunshine"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Redirected to http://localhost:3000/users/new
+Completed 302 Found in 282ms (ActiveRecord: 2.8ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2020-04-14 16:38:59 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 85ms (Views: 78.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2020-04-14 16:39:21 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rc3DFLNtRUQBMHvWSle8bqG1dNk9tzuwNbRpt9dXriFGaheKElchRyB7ZUM+3/tqd2zTn5Q2ZYNywv3Es4y3pQ==", "user"=>{"name"=>"fannyyyy", "username"=>"fannyflowers", "bio"=>"i love cesarin", "password"=>"[FILTERED]"}, "commit"=>"Submit User"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "fannyflowers"], ["LIMIT", 1]]
+  [1m[35mSQL (27.0ms)[0m  [1m[32mINSERT INTO "users" ("name", "username", "bio", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "fannyyyy"], ["username", "fannyflowers"], ["bio", "i love cesarin"], ["created_at", "2020-04-14 21:39:21.659175"], ["updated_at", "2020-04-14 21:39:21.659175"], ["password_digest", "$2a$12$UxxjGAcY6dPitB3s0C1/AuQGsdprnZvT4whqLuQhjINa27vpp9THe"]]
+  [1m[35m (4.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? AND ("users"."id" != ?) LIMIT ?[0m  [["username", "fannyflowers"], ["id", 9], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Completed 500 Internal Server Error in 312ms (ActiveRecord: 32.3ms)
+
+
+  
+NoMethodError (undefined method `user_path' for #<UsersController:0x00007f2af9783450>
+Did you mean?  users_path):
+  
+app/controllers/users_controller.rb:19:in `create'
+  Rendering /home/cesarm/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/cesarm/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/cesarm/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.1ms)
+  Rendering /home/cesarm/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/cesarm/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendering /home/cesarm/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/cesarm/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/cesarm/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (69.3ms)
+Started POST "/users" for 127.0.0.1 at 2020-04-14 16:39:51 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rc3DFLNtRUQBMHvWSle8bqG1dNk9tzuwNbRpt9dXriFGaheKElchRyB7ZUM+3/tqd2zTn5Q2ZYNywv3Es4y3pQ==", "user"=>{"name"=>"fannyyyy", "username"=>"fannyflowers", "bio"=>"i love cesarin", "password"=>"[FILTERED]"}, "commit"=>"Submit User"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "fannyflowers"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "fannyflowers"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Redirected to http://localhost:3000/users/new
+Completed 302 Found in 280ms (ActiveRecord: 3.4ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2020-04-14 16:39:52 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 77ms (Views: 68.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2020-04-14 16:40:13 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"AjbAPtbc+Ef29FDTrTeh8BQf/BuznopuaWmYCimSFnTpkRSgd+acRNe/TkbZv+b0wsZbXRof1F0uHwx5TUkP8A==", "user"=>{"name"=>"fannylovesme", "username"=>"fannylover", "bio"=>"i love my princess", "password"=>"[FILTERED]"}, "commit"=>"Submit User"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "fannylover"], ["LIMIT", 1]]
+  [1m[35mSQL (3.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "username", "bio", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "fannylovesme"], ["username", "fannylover"], ["bio", "i love my princess"], ["created_at", "2020-04-14 21:40:13.480830"], ["updated_at", "2020-04-14 21:40:13.480830"], ["password_digest", "$2a$12$Ma2OMmSqmSsevSLJxQlkqu0jlRptYECdJPKXRDjwi8IinSRWvohCK"]]
+  [1m[35m (3.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? AND ("users"."id" != ?) LIMIT ?[0m  [["username", "fannylover"], ["id", 10], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/users.10
+Completed 302 Found in 280ms (ActiveRecord: 7.7ms)
+
+
+Started GET "/users.10" for 127.0.0.1 at 2020-04-14 16:40:13 -0500
+Processing by UsersController#index as 
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 178ms (Views: 113.9ms | ActiveRecord: 0.3ms)
+
+
