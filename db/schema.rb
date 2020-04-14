@@ -10,13 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200412225519) do
+ActiveRecord::Schema.define(version: 20200414011346) do
 
   create_table "comments", force: :cascade do |t|
     t.string   "name"
     t.string   "username"
     t.text     "body"
-    t.integer  "post_id"
     t.integer  "user_id"
     t.integer  "recipe_id"
     t.datetime "created_at", null: false
@@ -40,10 +39,10 @@ ActiveRecord::Schema.define(version: 20200412225519) do
   create_table "users", force: :cascade do |t|
     t.string   "name"
     t.string   "username"
-    t.string   "password_digest"
-    t.text     "recipe"
+    t.text     "bio"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.string   "password_digest"
   end
 
 end

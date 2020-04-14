@@ -4,7 +4,7 @@ class CreateComments < ActiveRecord::Migration[5.0]
       t.string :name
       t.string :username
       t.text :body
-      t.integer :post_id
+      
       t.integer :user_id
       t.belongs_to :user
       t.belongs_to :recipe
