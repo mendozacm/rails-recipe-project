@@ -1,0 +1,20 @@
+<h3> Create a Comment </h3>
+
+<%= form_tag comments_path do %>
+
+    <label> Name:</label><br>
+
+    <%= text_field_tag :"comment[name]" %><br>
+
+    <label>Username:</label><br>
+
+    <%= text_field_tag :"comment[username]" %><br>
+
+    <label>Comment body:</label><br>
+
+    <%= text_field_tag :"comment[body]" %><br>
+
+   
+
+    <%= submit_tag "Submit Comment" %>
+<% end %>
