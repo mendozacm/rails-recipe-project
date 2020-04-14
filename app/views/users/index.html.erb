@@ -1,6 +1,11 @@
 
-<h3.hello, index</h3>
-<% @users.each do |user|%>
-    <%= user.name %>
-    <h3>hello</h3>
+<p>
+<% @users.each do |user|%><br><li>
+   Name: <%= user.name %><br>
+   Username: <%= user.username %><br>
+   Bio: <%= user.bio %><br>
+   Password: <%= user.password_digest %><br>
+
+    
     <% end %>
+    </li></p><br>
