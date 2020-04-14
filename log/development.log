@@ -3897,3 +3897,18 @@ Processing by CommentsController#show as HTML
 Completed 200 OK in 381ms (Views: 327.6ms | ActiveRecord: 2.6ms)
 
 
+Started GET "/comments/new" for 127.0.0.1 at 2020-04-14 17:35:34 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CommentsController#new as HTML
+  Rendering comments/new.html.erb within layouts/application
+  Rendered comments/new.html.erb within layouts/application (12.7ms)
+Completed 200 OK in 320ms (Views: 300.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/comments/new" for 127.0.0.1 at 2020-04-14 17:36:06 -0500
+Processing by CommentsController#new as HTML
+  Rendering comments/new.html.erb within layouts/application
+  Rendered comments/new.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 117ms (Views: 109.9ms | ActiveRecord: 0.0ms)
+
+
