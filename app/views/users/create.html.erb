@@ -1,2 +1,22 @@
-<h1>Users#create</h1>
-<p>Find me in app/views/users/create.html.erb</p>
+<h3> New User Form </h3>
+
+<%= form_tag users_show_path do %>
+
+    <label> Name:</label><br>
+
+    <%= text_field_tag :name %><br>
+
+    <label>Username:</label><br>
+
+    <%= text_field_tag :username %><br>
+
+    <label>User Bio:</label><br>
+
+    <%= text_field_tag :bio %><br>
+
+    <label>User Password:</label><br>
+
+    <%= text_field_tag :password %><br>
+
+    <%= submit_tag %>
+<% end %>

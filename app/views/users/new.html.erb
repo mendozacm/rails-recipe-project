@@ -1,0 +1,18 @@
+<h3> New User Form </h3>
+
+<%= form_tag(@user) do |f| %>
+
+    <label>User Name:</label><br>
+    <%= f.text_field :name %><br>
+
+    <label>Username:</label><br>
+    <%= f.text_field :username %><br>
+
+    <label>User Bio:</label><br>
+    <%= f.text_field :bio %><br>
+
+    <label>User Password:</label><br>
+    <%= f.text_field :password %><br>
+
+    <%= f.submit %>
+<% end %>
