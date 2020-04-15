@@ -34,6 +34,12 @@ class UsersController < ApplicationController
     redirect_to "/users"
   end
 
+  def recipes_index
+    @user = User.find(params[:id])
+    @recipe = @user.recipes
+  end
+
+
 
   private
 
