@@ -5023,3 +5023,590 @@ Processing by UsersController#index as HTML
 Completed 200 OK in 77ms (Views: 68.0ms | ActiveRecord: 0.3ms)
 
 
+Started GET "/recipes" for 127.0.0.1 at 2020-04-14 22:06:29 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.4ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  Rendered recipes/index.html.erb within layouts/application (14.6ms)
+Completed 200 OK in 369ms (Views: 324.0ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/recipes/new" for 127.0.0.1 at 2020-04-14 22:06:35 -0500
+Processing by RecipesController#new as HTML
+  Rendering recipes/new.html.erb within layouts/application
+  Rendered recipes/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 72ms (Views: 66.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/recipes" for 127.0.0.1 at 2020-04-14 22:07:06 -0500
+Processing by RecipesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZimiAdCEPLI0+LpM4L4eFBiyxGXiGBRghZzfFhUI+XqNjnafcb5YsRWzpNmUNlkQzmtjI0uZSlPC6ktlcdPg/g==", "recipe"=>{"name"=>"paasrt", "username"=>"ilovefanny", "description"=>"creamy chicken", "instructions"=>"do it all in a bowl", "ingredients"=>"everything"}, "commit"=>"Submit recipe"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.6ms)[0m  [1m[32mINSERT INTO "recipes" ("name", "username", "description", "instructions", "ingredients", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "paasrt"], ["username", "ilovefanny"], ["description", "creamy chicken"], ["instructions", "do it all in a bowl"], ["ingredients", "everything"], ["created_at", "2020-04-15 03:07:06.782365"], ["updated_at", "2020-04-15 03:07:06.782365"]]
+  [1m[35m (3.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/recipes/2
+Completed 302 Found in 16ms (ActiveRecord: 5.7ms)
+
+
+Started GET "/recipes/2" for 127.0.0.1 at 2020-04-14 22:07:06 -0500
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering recipes/show.html.erb within layouts/application
+  Rendered recipes/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 88ms (Views: 74.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/recipes/2/edit" for 127.0.0.1 at 2020-04-14 22:07:12 -0500
+Processing by RecipesController#edit as HTML
+  Parameters: {"id"=>"2"}
+  Rendering recipes/edit.html.erb within layouts/application
+  Rendered recipes/edit.html.erb within layouts/application (0.6ms)
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/mnt/c/Users/mendo/dev/flatiron/labs/rails-recipe-project/app/views/recipes/edit.html.erb:6: syntax error, unexpected '[', expecting tSTRING_CONTENT or tSTRING_DBEG or tSTRING_DVAR or tSTRING_END
+...buffer.append=( f.text_field :[name );@output_buffer.safe_ap...
+...                              ^):
+  
+app/views/recipes/edit.html.erb:6: syntax error, unexpected '[', expecting tSTRING_CONTENT or tSTRING_DBEG or tSTRING_DVAR or tSTRING_END
+  Rendering /home/cesarm/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/cesarm/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/cesarm/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.9ms)
+  Rendering /home/cesarm/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/cesarm/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendering /home/cesarm/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/cesarm/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/cesarm/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (71.2ms)
+Started GET "/recipes/2/edit" for 127.0.0.1 at 2020-04-14 22:07:22 -0500
+Processing by RecipesController#edit as HTML
+  Parameters: {"id"=>"2"}
+  Rendering recipes/edit.html.erb within layouts/application
+  Rendered recipes/edit.html.erb within layouts/application (8.5ms)
+Completed 500 Internal Server Error in 36ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <h3> Edit your Recipe </h3>
+    2: 
+    3: <%= form_for(@recipe) do |f| %>
+    4: 
+    5:     <label> Name:</label><br>
+    6:     <%= f.text_field :name %><br>
+  
+app/views/recipes/edit.html.erb:3:in `_app_views_recipes_edit_html_erb___1759105774239296027_70308227678840'
+  Rendering /home/cesarm/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/cesarm/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/cesarm/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.7ms)
+  Rendering /home/cesarm/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/cesarm/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendering /home/cesarm/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/cesarm/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /home/cesarm/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (71.5ms)
+Started GET "/recipes/2/edit" for 127.0.0.1 at 2020-04-14 22:10:17 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by RecipesController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mRecipe Load (0.4ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering recipes/edit.html.erb within layouts/application
+  Rendered recipes/edit.html.erb within layouts/application (63.0ms)
+Completed 200 OK in 447ms (Views: 388.4ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/recipes/2/edit" for 127.0.0.1 at 2020-04-14 22:12:28 -0500
+Processing by RecipesController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mRecipe Load (1.0ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering recipes/edit.html.erb within layouts/application
+  Rendered recipes/edit.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 82ms (Views: 72.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/recipes/2/edit" for 127.0.0.1 at 2020-04-14 22:13:00 -0500
+Processing by RecipesController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mRecipe Load (0.9ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering recipes/edit.html.erb within layouts/application
+  Rendered recipes/edit.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 99ms (Views: 86.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/recipes/2/edit" for 127.0.0.1 at 2020-04-14 22:13:02 -0500
+Processing by RecipesController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mRecipe Load (0.5ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering recipes/edit.html.erb within layouts/application
+  Rendered recipes/edit.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 103ms (Views: 95.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/recipes/2/edit" for 127.0.0.1 at 2020-04-14 22:13:03 -0500
+Processing by RecipesController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering recipes/edit.html.erb within layouts/application
+  Rendered recipes/edit.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 93ms (Views: 82.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/recipes/2/edit" for 127.0.0.1 at 2020-04-14 22:13:09 -0500
+Processing by RecipesController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering recipes/edit.html.erb within layouts/application
+  Rendered recipes/edit.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 84ms (Views: 72.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/recipes/2/edit" for 127.0.0.1 at 2020-04-14 22:13:35 -0500
+Processing by RecipesController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering recipes/edit.html.erb within layouts/application
+  Rendered recipes/edit.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 102ms (Views: 91.0ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/recipes/2" for 127.0.0.1 at 2020-04-14 22:13:41 -0500
+Processing by RecipesController#destroy as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9kb7/RjMjWhXKe2NW7qyaHKB6h/KnGvzWDP4+PrpEjwd4S9jufbpa3Zi8xgvMvVspFhNWWMdNcAfRWyLnjILuA==", "recipe"=>{"name"=>"paasrt", "username"=>"ilovefanny", "description"=>"creamy chicken", "instructions"=>"do it all in a bowl", "ingredients"=>"everything"}, "id"=>"2"}
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.6ms)[0m  [1m[31mDELETE FROM "recipes" WHERE "recipes"."id" = ?[0m  [["id", 2]]
+  [1m[35m (3.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/recipes
+Completed 302 Found in 15ms (ActiveRecord: 5.9ms)
+
+
+Started GET "/recipes" for 127.0.0.1 at 2020-04-14 22:13:41 -0500
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  Rendered recipes/index.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 106ms (Views: 98.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/recipes/new" for 127.0.0.1 at 2020-04-14 22:13:47 -0500
+Processing by RecipesController#new as HTML
+  Rendering recipes/new.html.erb within layouts/application
+  Rendered recipes/new.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 81ms (Views: 73.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/recipes" for 127.0.0.1 at 2020-04-14 22:13:56 -0500
+Processing by RecipesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"eLKK6NFA/SYfz4OC2fW7DMHUrE/OWNAnnNDbaTsdu0mTFV52cHqZJT6EnRetffwIFw0LCWfZjhTbpk8aX8aizQ==", "recipe"=>{"name"=>"df", "username"=>"dsfasdfasd", "description"=>"sadf", "instructions"=>"sdf", "ingredients"=>"fds"}, "commit"=>"Submit recipe"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.5ms)[0m  [1m[32mINSERT INTO "recipes" ("name", "username", "description", "instructions", "ingredients", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "df"], ["username", "dsfasdfasd"], ["description", "sadf"], ["instructions", "sdf"], ["ingredients", "fds"], ["created_at", "2020-04-15 03:13:57.021646"], ["updated_at", "2020-04-15 03:13:57.021646"]]
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/recipes/3
+Completed 302 Found in 18ms (ActiveRecord: 4.1ms)
+
+
+Started GET "/recipes/3" for 127.0.0.1 at 2020-04-14 22:13:57 -0500
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering recipes/show.html.erb within layouts/application
+  Rendered recipes/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 78ms (Views: 68.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/recipes" for 127.0.0.1 at 2020-04-14 22:14:00 -0500
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  Rendered recipes/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 82ms (Views: 71.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/recipes/3/edit" for 127.0.0.1 at 2020-04-14 22:14:06 -0500
+Processing by RecipesController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering recipes/edit.html.erb within layouts/application
+  Rendered recipes/edit.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 96ms (Views: 83.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/recipes/3/edit" for 127.0.0.1 at 2020-04-14 22:14:23 -0500
+Processing by RecipesController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering recipes/edit.html.erb within layouts/application
+  Rendered recipes/edit.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 104ms (Views: 91.1ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/recipes/3" for 127.0.0.1 at 2020-04-14 22:14:25 -0500
+Processing by RecipesController#destroy as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uFyJxIQ+vUwsVgcmsCD7jq+4Icke0HqH7PiyKYL4JxRT+11aJQTZTw0dGbPEqLyKeWGGj7dRJLSrjiZa5iM+kA==", "recipe"=>{"name"=>"df", "username"=>"dsfasdfasd", "description"=>"sadf", "instructions"=>"sdf", "ingredients"=>"fds"}, "commit"=>"Update Recipe", "id"=>"3"}
+  [1m[36mRecipe Load (0.7ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (31.5ms)[0m  [1m[31mDELETE FROM "recipes" WHERE "recipes"."id" = ?[0m  [["id", 3]]
+  [1m[35m (3.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/recipes
+Completed 302 Found in 50ms (ActiveRecord: 35.5ms)
+
+
+Started GET "/recipes" for 127.0.0.1 at 2020-04-14 22:14:25 -0500
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  Rendered recipes/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 70ms (Views: 64.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/recipes/new" for 127.0.0.1 at 2020-04-14 22:14:33 -0500
+Processing by RecipesController#new as HTML
+  Rendering recipes/new.html.erb within layouts/application
+  Rendered recipes/new.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 84ms (Views: 75.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/recipes" for 127.0.0.1 at 2020-04-14 22:14:45 -0500
+Processing by RecipesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"95k9+FXKWWBmuQT26cn2uAlkZWu0yKKqDKy43KaHK08cPulm9PA9Y0fyGmOdQbG8373CLR1J/JlL2iyvwlwyyw==", "recipe"=>{"name"=>"il odsfasdf", "username"=>"dsfasdfsd", "description"=>"sdfasdfasdf", "instructions"=>"dsfasdfasdf", "ingredients"=>"asdfasdfasd"}, "commit"=>"Submit recipe"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.2ms)[0m  [1m[32mINSERT INTO "recipes" ("name", "username", "description", "instructions", "ingredients", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "il odsfasdf"], ["username", "dsfasdfsd"], ["description", "sdfasdfasdf"], ["instructions", "dsfasdfasdf"], ["ingredients", "asdfasdfasd"], ["created_at", "2020-04-15 03:14:45.471868"], ["updated_at", "2020-04-15 03:14:45.471868"]]
+  [1m[35m (6.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/recipes/4
+Completed 302 Found in 26ms (ActiveRecord: 8.6ms)
+
+
+Started GET "/recipes/4" for 127.0.0.1 at 2020-04-14 22:14:45 -0500
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering recipes/show.html.erb within layouts/application
+  Rendered recipes/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 73ms (Views: 61.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/recipes" for 127.0.0.1 at 2020-04-14 22:14:48 -0500
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  Rendered recipes/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 75ms (Views: 68.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/recipes/4/edit" for 127.0.0.1 at 2020-04-14 22:14:53 -0500
+Processing by RecipesController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mRecipe Load (0.4ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering recipes/edit.html.erb within layouts/application
+  Rendered recipes/edit.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 73ms (Views: 65.4ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/recipes/4" for 127.0.0.1 at 2020-04-14 22:14:58 -0500
+Processing by RecipesController#destroy as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TyCW2F32TI2teBktMRh9MJxREHuZd1mDdCOSe3rzHHykh0JG/MwojowzB7hFkDo0Soi3PTD2B7AzVQYIHigF+A==", "recipe"=>{"name"=>"il odsfasdf", "username"=>"dsfasdfsd", "description"=>"sdfasdfasdf", "instructions"=>"dsfasdfasdf", "ingredients"=>"asdfasdfasd"}, "commit"=>"Update Recipe", "id"=>"4"}
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (28.5ms)[0m  [1m[31mDELETE FROM "recipes" WHERE "recipes"."id" = ?[0m  [["id", 4]]
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/recipes
+Completed 302 Found in 50ms (ActiveRecord: 31.2ms)
+
+
+Started GET "/recipes" for 127.0.0.1 at 2020-04-14 22:14:58 -0500
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  Rendered recipes/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 71ms (Views: 63.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/recipes/4" for 127.0.0.1 at 2020-04-14 22:15:02 -0500
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Recipe with 'id'=4):
+  
+app/controllers/recipes_controller.rb:8:in `show'
+  Rendering /home/cesarm/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/cesarm/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/cesarm/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.9ms)
+  Rendering /home/cesarm/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/cesarm/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendering /home/cesarm/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/cesarm/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /home/cesarm/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (70.4ms)
+Started GET "/recipes/new" for 127.0.0.1 at 2020-04-14 22:15:09 -0500
+Processing by RecipesController#new as HTML
+  Rendering recipes/new.html.erb within layouts/application
+  Rendered recipes/new.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 91ms (Views: 84.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/recipes" for 127.0.0.1 at 2020-04-14 22:15:17 -0500
+Processing by RecipesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"owMhqj/d4GffEVocrdwWWPsFx6qmZWWswWAydgOitltIpPU0nueEZP5aRInZVFFcLdxg7A/kO5+GFqYFZ3mv3w==", "recipe"=>{"name"=>"sdfasdf", "username"=>"sdfasdf", "description"=>"asdfasdf", "instructions"=>"asdfasdf", "ingredients"=>"sdfasdf"}, "commit"=>"Submit recipe"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.5ms)[0m  [1m[32mINSERT INTO "recipes" ("name", "username", "description", "instructions", "ingredients", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "sdfasdf"], ["username", "sdfasdf"], ["description", "asdfasdf"], ["instructions", "asdfasdf"], ["ingredients", "sdfasdf"], ["created_at", "2020-04-15 03:15:17.473527"], ["updated_at", "2020-04-15 03:15:17.473527"]]
+  [1m[35m (5.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/recipes/5
+Completed 302 Found in 17ms (ActiveRecord: 7.3ms)
+
+
+Started GET "/recipes/5" for 127.0.0.1 at 2020-04-14 22:15:17 -0500
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering recipes/show.html.erb within layouts/application
+  Rendered recipes/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 86ms (Views: 75.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2020-04-14 22:15:23 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 95ms (Views: 86.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2020-04-14 22:15:43 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gIapnZR8pp/uwnTn7JU/exrBJTRbXu1lWAIQF8CF9UprIX0DNUbCnM+JanKYHXh/zBiCcvLfs1YfdIRkpF7szg==", "user"=>{"name"=>"cesarmendo", "username"=>"Cesarinpomin1212", "bio"=>"i love food", "password"=>"[FILTERED]"}, "commit"=>"Submit User"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Cesarinpomin1212"], ["LIMIT", 1]]
+  [1m[35mSQL (2.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "username", "bio", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "cesarmendo"], ["username", "Cesarinpomin1212"], ["bio", "i love food"], ["created_at", "2020-04-15 03:15:43.843428"], ["updated_at", "2020-04-15 03:15:43.843428"], ["password_digest", "$2a$12$jgeUTq3iRkkO5iKCZWb6Z.T.5NQhF8STPrYiHvOfmq0k7otpcdoma"]]
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? AND ("users"."id" != ?) LIMIT ?[0m  [["username", "Cesarinpomin1212"], ["id", 12], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/users.12
+Completed 302 Found in 339ms (ActiveRecord: 6.5ms)
+
+
+Started GET "/users.12" for 127.0.0.1 at 2020-04-14 22:15:43 -0500
+Processing by UsersController#index as 
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 180ms (Views: 112.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/12/edit" for 127.0.0.1 at 2020-04-14 22:15:54 -0500
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/edit.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 80ms (Views: 68.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/12/edit" for 127.0.0.1 at 2020-04-14 22:16:35 -0500
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/edit.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 73ms (Views: 66.3ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/users/12" for 127.0.0.1 at 2020-04-14 22:16:41 -0500
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"C8chK0zG71DbWqdhX/My3CSXc6ga1p7VJ98sSTTF8g7gYPW17fyLU/oRufQre3XY8k7U7rNXwOZgqbg6UB7rig==", "user"=>{"name"=>"cesarmendo loves to eat", "bio"=>"i love food"}, "commit"=>"Update User", "id"=>"12"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? AND ("users"."id" != ?) LIMIT ?[0m  [["username", "Cesarinpomin1212"], ["id", 12], ["LIMIT", 1]]
+  [1m[35mSQL (1.4ms)[0m  [1m[33mUPDATE "users" SET "name" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["name", "cesarmendo loves to eat"], ["updated_at", "2020-04-15 03:16:41.291985"], ["id", 12]]
+  [1m[35m (4.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/users/12
+Completed 302 Found in 20ms (ActiveRecord: 6.3ms)
+
+
+Started GET "/users/12" for 127.0.0.1 at 2020-04-14 22:16:41 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 76ms (Views: 61.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2020-04-14 22:16:46 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 74ms (Views: 67.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/12/edit" for 127.0.0.1 at 2020-04-14 22:17:13 -0500
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/edit.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 79ms (Views: 65.9ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/users/12" for 127.0.0.1 at 2020-04-14 22:17:19 -0500
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"m53DcyQOC0N1xHeY+Ym7XeaSQM5w4WvGmJi5s4ZyVUBwOhfthTRvQFSPaQ2NAfxZMEvniNlgNfXf7i3A4qlMxA==", "user"=>{"name"=>"cesarmendo loves to eat", "bio"=>"i love food too much"}, "commit"=>"Update User", "id"=>"12"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? AND ("users"."id" != ?) LIMIT ?[0m  [["username", "Cesarinpomin1212"], ["id", 12], ["LIMIT", 1]]
+  [1m[35mSQL (1.2ms)[0m  [1m[33mUPDATE "users" SET "bio" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["bio", "i love food too much"], ["updated_at", "2020-04-15 03:17:19.420321"], ["id", 12]]
+  [1m[35m (3.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/users/12
+Completed 302 Found in 25ms (ActiveRecord: 5.4ms)
+
+
+Started GET "/users/12" for 127.0.0.1 at 2020-04-14 22:17:19 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 71ms (Views: 62.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/12/edit" for 127.0.0.1 at 2020-04-14 22:17:23 -0500
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/edit.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 77ms (Views: 67.5ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/users/12" for 127.0.0.1 at 2020-04-14 22:17:27 -0500
+Processing by UsersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"IGjfyhURBGl1+MmRGxrj+QwJoghQDC0/gUvCMLjno6bLzwtUtCtgalSz1wRvkqT92tAFTvmNcwzGPVZD3Dy6Ig==", "id"=>"12"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (39.8ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 12]]
+  [1m[35m (3.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/users
+Completed 302 Found in 59ms (ActiveRecord: 44.1ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2020-04-14 22:17:27 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 72ms (Views: 65.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/recipes" for 127.0.0.1 at 2020-04-14 22:17:47 -0500
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  Rendered recipes/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 86ms (Views: 76.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/recipes" for 127.0.0.1 at 2020-04-14 22:18:33 -0500
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  Rendered recipes/index.html.erb within layouts/application (15.3ms)
+Completed 500 Internal Server Error in 41ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `recipe_id' for #<Recipe:0x00007fc0a8efcd18>):
+     6:    Description: <%= recipe.description %><br>
+     7:    Instructions: <%= recipe.instructions %><br>
+     8:    Ingredients: <%= recipe.ingredients %><br>
+     9:    Recipe ID: <%=recipe.recipe_id %>
+    10: 
+    11:     
+    12:     <% end %>
+  
+app/views/recipes/index.html.erb:9:in `block in _app_views_recipes_index_html_erb__3981029813706671916_70232722337600'
+app/views/recipes/index.html.erb:3:in `_app_views_recipes_index_html_erb__3981029813706671916_70232722337600'
+  Rendering /home/cesarm/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/cesarm/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/cesarm/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.3ms)
+  Rendering /home/cesarm/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/cesarm/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendering /home/cesarm/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/cesarm/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/cesarm/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (71.7ms)
+Started GET "/recipes" for 127.0.0.1 at 2020-04-14 22:19:00 -0500
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (2.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  Rendered recipes/index.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 85ms (Views: 76.9ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/recipes/5/edit" for 127.0.0.1 at 2020-04-14 22:19:22 -0500
+Processing by RecipesController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering recipes/edit.html.erb within layouts/application
+  Rendered recipes/edit.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 75ms (Views: 67.8ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/recipes/5" for 127.0.0.1 at 2020-04-14 22:19:35 -0500
+Processing by RecipesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HR61SvXx+b4+/I5pZjFSpFuWj1xXcTSj0CQjS2Lruq/2uWHUVMudvR+3kPwSuRWgjU8oGv7wapCXUrc4BjCjKw==", "recipe"=>{"name"=>"food", "username"=>"pasata", "description"=>"food", "instructions"=>"asdfasdf", "ingredients"=>"sdfasdf"}, "commit"=>"Update Recipe", "id"=>"5"}
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.1ms)[0m  [1m[33mUPDATE "recipes" SET "name" = ?, "username" = ?, "description" = ?, "updated_at" = ? WHERE "recipes"."id" = ?[0m  [["name", "food"], ["username", "pasata"], ["description", "food"], ["updated_at", "2020-04-15 03:19:36.006144"], ["id", 5]]
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/recipes/5
+Completed 302 Found in 17ms (ActiveRecord: 4.8ms)
+
+
+Started GET "/recipes/5" for 127.0.0.1 at 2020-04-14 22:19:36 -0500
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering recipes/show.html.erb within layouts/application
+  Rendered recipes/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 75ms (Views: 64.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/recipes" for 127.0.0.1 at 2020-04-14 22:19:39 -0500
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  Rendered recipes/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 97ms (Views: 80.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/recipes/5/edit" for 127.0.0.1 at 2020-04-14 22:19:49 -0500
+Processing by RecipesController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering recipes/edit.html.erb within layouts/application
+  Rendered recipes/edit.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 77ms (Views: 69.0ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/recipes/5" for 127.0.0.1 at 2020-04-14 22:19:53 -0500
+Processing by RecipesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"GfilUn+B74trfuSiCdx/UcX5/wtmy7Vecq9PYDNg2Y3yX3HM3ruLiEo1+jd9VDhVEyBYTc9K62012dsTV7vACQ==", "id"=>"5"}
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.7ms)[0m  [1m[31mDELETE FROM "recipes" WHERE "recipes"."id" = ?[0m  [["id", 5]]
+  [1m[35m (2.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/recipes
+Completed 302 Found in 15ms (ActiveRecord: 5.9ms)
+
+
+Started GET "/recipes" for 127.0.0.1 at 2020-04-14 22:19:53 -0500
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  Rendered recipes/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 76ms (Views: 68.3ms | ActiveRecord: 0.3ms)
+
+

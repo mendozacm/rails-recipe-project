@@ -10,7 +10,8 @@
     <label>User Bio:</label><br>
     <%= f.text_field :bio %><br>
 
-    <%= button_to "Delete", @user, method: :delete, data: { confirm: "Really?" } %>
 
     <%= f.submit %>
 <% end %>
+
+<%= button_to "Delete", @user, method: :delete, data: { confirm: "Really?" } %>

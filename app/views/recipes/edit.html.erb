@@ -1,2 +1,28 @@
-<h1>Recipes#edit</h1>
-<p>Find me in app/views/recipes/edit.html.erb</p>
+<h3> Edit your Recipe </h3>
+
+<%= form_for(@recipe) do |f| %>
+
+    <label> Name:</label><br>
+    <%= f.text_field :name %><br>
+
+    <label>Username:</label><br>
+    <%= f.text_field :username %><br>
+
+    <label>Recipe Description:</label><br>
+    <%= f.text_area :description %><br>
+
+    <label>Recipe instructions:</label><br>
+    <%= f.text_area :instructions %><br>
+
+    <label>Recipe ingredients:</label><br>
+    <%= f.text_area :ingredients %><br>
+
+    <%= f.submit %>
+
+
+    
+    
+
+<% end %>
+
+<%= button_to "Delete", @recipe, method: :delete, data: { confirm: "Really?" } %>
