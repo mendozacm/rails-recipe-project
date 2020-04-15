@@ -7,9 +7,11 @@ Rails.application.routes.draw do
 
   resources :comments, only: [:index, :create, :new, :show, :update, :edit, :destroy]
 
-  get "/login", to: "sessions#new"
+  get '/login' => 'sessions#new'
+  post '/login' => 'sessions#create'
+  post '/logout' => 'sessions#destroy'
 
-  post "/login", to: "sessions#create"
-
+  root 'welcome#home'
+  
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
