@@ -5,8 +5,11 @@ Rails.application.routes.draw do
 
   resources :recipes, only: [:index, :create, :new, :show, :update, :edit, :destroy]
 
- resources :comments, only: [:index, :create, :new, :show, :update, :edit, :destroy]
+  resources :comments, only: [:index, :create, :new, :show, :update, :edit, :destroy]
 
-  get 'hello_world', to: 'static#hello_world'
+  get "/login", to: "sessions#new"
+
+  post "/login", to: "sessions#create"
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
