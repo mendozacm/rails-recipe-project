@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
 
   def index
-   
     @users = User.all
   end
 
@@ -13,15 +12,27 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.create(user_params)
+    @user = User.create(user_params(:name, :bio, :username, :password, :password_confirmation))
     return redirect_to controller: 'users', action: 'new' unless @user.save
     session[:user_id] = @user.id
     redirect_to users_path(@user)
   end
 
+  def edit
+    @user = User.find(params[:id])
+  end
+
+  def update
+    @user = User.find(params[:id])
+    @user.update(user_params(:name, :bio))
+
+    redirect_to user_path(@user)
+  end
+
+
   private
 
-  def user_params
-    params.require(:user).permit(:name, :bio, :username, :password, :password_confirmation)
+  def user_params(*args)
+    params.require(:user).permit(*args)
   end
 end

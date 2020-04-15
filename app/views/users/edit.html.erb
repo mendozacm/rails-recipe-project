@@ -1,0 +1,16 @@
+<h3> User Edit Form </h3>
+
+<%= form_for(@user) do |f| %>
+
+    <label> Name:</label><br>
+    <%= f.text_field :name %><br>
+
+ 
+
+    <label>User Bio:</label><br>
+    <%= f.text_field :bio %><br>
+
+
+
+    <%= f.submit %>
+<% end %>
