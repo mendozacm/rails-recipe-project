@@ -5,4 +5,14 @@
    Description: <%= @recipe.description %><br>
    Instructions: <%= @recipe.instructions %><br>
    Ingredients: <%= @recipe.ingredients %><br>
-   User_id: <%= @recipe.user_id %>
+   User_id: <%= @recipe.user_id %><br>
+   Recipe id: <%= @recipe.id %><br>
+
+   Comment:
+   <%= link_to "/comments/new", new_comment_path(@comment) %> said
+
+  <br> Comments:
+  <% @recipe.comments.each do |comment| %>
+    <%= link_to comment.user.username, user_path(comment.user) %> said
+    <%= comment.body %>
+  <% end %>

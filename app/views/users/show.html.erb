@@ -7,5 +7,11 @@
     Name: <%= @user.name %><br>
     Username: <%= @user.username %><br>
     Bio: <%= @user.bio %><br>
+
+    <h2><%= @user.username %> </h2> has commented on the following recipes:
+ 
+<% @user.recipes.each do |recipe| %>
+  <%= link_to recipe.name, recipe_path(recipe) %>
+<% end %>
    
  

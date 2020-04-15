@@ -12,8 +12,10 @@ class CommentsController < ApplicationController
   end
 
   def create
+    
     @comment = Comment.new(comment_params)
     @comment.user_id = current_user.id
+    @comment.recipe_id = Recipe.last.id
     @comment.save
     
     redirect_to comment_path(@comment)
