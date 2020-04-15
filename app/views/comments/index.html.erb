@@ -1,2 +1,13 @@
-<h1>Comments#index</h1>
-<p>Find me in app/views/comments/index.html.erb</p>
+
+
+<p>
+<% @comments.each do |comment|%><br><li>
+   Name: <%= comment.name %><br>
+   Username: <%= comment.username %><br>
+   Body: <%= comment.body %><br>
+  
+   Comment ID: <%=comment.id %>
+
+    
+    <% end %>
+    </li></p><br>

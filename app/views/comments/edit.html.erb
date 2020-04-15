@@ -1,2 +1,19 @@
-<h1>Comments#edit</h1>
-<p>Find me in app/views/comments/edit.html.erb</p>
+<h3> Edit your Comment </h3>
+
+<%= form_for(@comment)  do |f| %>
+
+    <label> Name:</label><br>
+    <%= f.text_field :name %><br>
+
+    <label>Username:</label><br>
+    <%= f.text_field :username %><br>
+
+    <label>Comment body:</label><br>
+    <%= f.text_area :body %><br>
+
+   
+
+    <%= submit_tag "Submit Comment" %>
+<% end %>
+
+<%= button_to "Delete", @comment, method: :delete, data: { confirm: "Really?" } %>

@@ -5610,3 +5610,386 @@ Processing by RecipesController#index as HTML
 Completed 200 OK in 76ms (Views: 68.3ms | ActiveRecord: 0.3ms)
 
 
+Started GET "/comments" for 127.0.0.1 at 2020-04-14 22:24:08 -0500
+Started GET "/comments" for 127.0.0.1 at 2020-04-14 22:24:08 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CommentsController#index as HTML
+Processing by CommentsController#index as HTML
+  Rendering comments/index.html.erb within layouts/application
+  Rendering comments/index.html.erb within layouts/application
+  Rendered comments/index.html.erb within layouts/application (4.8ms)
+  Rendered comments/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 399ms (Views: 352.7ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 393ms (Views: 356.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/comments" for 127.0.0.1 at 2020-04-14 22:25:47 -0500
+Processing by CommentsController#index as HTML
+  Rendering comments/index.html.erb within layouts/application
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  Rendered comments/index.html.erb within layouts/application (11.8ms)
+Completed 200 OK in 91ms (Views: 82.2ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/comments/new" for 127.0.0.1 at 2020-04-14 22:25:53 -0500
+Processing by CommentsController#new as HTML
+  Rendering comments/new.html.erb within layouts/application
+  Rendered comments/new.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 112ms (Views: 101.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/comments" for 127.0.0.1 at 2020-04-14 22:26:11 -0500
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vtq4r+3mqqu6eK4eqgplSxqOS4/8A5GqHe4jFTFrLLlVfWwxTNzOqJszsIvegiJPzFfsyVWCz5lamLdmVbA1PQ==", "comment"=>{"name"=>"cesar", "username"=>"121212", "body"=>"i hatee figs"}, "commit"=>"Submit Comment"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.8ms)[0m  [1m[32mINSERT INTO "comments" ("name", "username", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "cesar"], ["username", "121212"], ["body", "i hatee figs"], ["created_at", "2020-04-15 03:26:11.895659"], ["updated_at", "2020-04-15 03:26:11.895659"]]
+  [1m[35m (76.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/comments/2
+Completed 302 Found in 86ms (ActiveRecord: 78.1ms)
+
+
+Started GET "/comments/2" for 127.0.0.1 at 2020-04-14 22:26:11 -0500
+Processing by CommentsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mComment Load (0.7ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering comments/show.html.erb within layouts/application
+  Rendered comments/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 106ms (Views: 91.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/comments/2" for 127.0.0.1 at 2020-04-14 22:26:43 -0500
+Processing by CommentsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering comments/show.html.erb within layouts/application
+  Rendered comments/show.html.erb within layouts/application (0.6ms)
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 0.3ms)
+
+
+  
+SyntaxError (/mnt/c/Users/mendo/dev/flatiron/labs/rails-recipe-project/app/views/comments/show.html.erb:1: syntax error, unexpected do, expecting end
+...::OutputBuffer.new; @comment do |comment|;@output_buffer.saf...
+...                             ^~
+/mnt/c/Users/mendo/dev/flatiron/labs/rails-recipe-project/app/views/comments/show.html.erb:10: syntax error, unexpected ensure, expecting end-of-input
+          ensure
+          ^~~~~~):
+  
+app/views/comments/show.html.erb:1: syntax error, unexpected do, expecting end
+app/views/comments/show.html.erb:10: syntax error, unexpected ensure, expecting end-of-input
+  Rendering /home/cesarm/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/cesarm/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/cesarm/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.1ms)
+  Rendering /home/cesarm/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/cesarm/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
+  Rendering /home/cesarm/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/cesarm/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /home/cesarm/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (77.0ms)
+Started GET "/comments/2" for 127.0.0.1 at 2020-04-14 22:27:23 -0500
+Processing by CommentsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering comments/show.html.erb within layouts/application
+  Rendered comments/show.html.erb within layouts/application (0.7ms)
+Completed 500 Internal Server Error in 39ms (ActiveRecord: 0.3ms)
+
+
+  
+SyntaxError (/mnt/c/Users/mendo/dev/flatiron/labs/rails-recipe-project/app/views/comments/show.html.erb:10: syntax error, unexpected ensure, expecting end-of-input
+          ensure
+          ^~~~~~):
+  
+app/views/comments/show.html.erb:10: syntax error, unexpected ensure, expecting end-of-input
+  Rendering /home/cesarm/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/cesarm/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/cesarm/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.9ms)
+  Rendering /home/cesarm/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/cesarm/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendering /home/cesarm/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/cesarm/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /home/cesarm/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (73.3ms)
+Started GET "/comments/2" for 127.0.0.1 at 2020-04-14 22:27:29 -0500
+Processing by CommentsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering comments/show.html.erb within layouts/application
+  Rendered comments/show.html.erb within layouts/application (37.3ms)
+Completed 500 Internal Server Error in 71ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `comment' for #<#<Class:0x00007fdab475ee28>:0x00007fdab506e838>
+Did you mean?  @comment):
+    1: <% @comment = comment %><br><li>
+    2:     Name: <%= comment.name %><br>
+    3:     Username: <%= comment.username %><br>
+    4:     Body: <%= comment.body %><br>
+  
+app/views/comments/show.html.erb:1:in `_app_views_comments_show_html_erb__4355379122626539500_70288658364480'
+  Rendering /home/cesarm/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/cesarm/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/cesarm/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.7ms)
+  Rendering /home/cesarm/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/cesarm/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendering /home/cesarm/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/cesarm/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /home/cesarm/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (69.1ms)
+Started GET "/comments/2" for 127.0.0.1 at 2020-04-14 22:27:53 -0500
+Processing by CommentsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering comments/show.html.erb within layouts/application
+  Rendered comments/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 87ms (Views: 76.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/comments" for 127.0.0.1 at 2020-04-14 22:27:59 -0500
+Processing by CommentsController#index as HTML
+  Rendering comments/index.html.erb within layouts/application
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  Rendered comments/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 80ms (Views: 73.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/comments/2/edit" for 127.0.0.1 at 2020-04-14 22:28:08 -0500
+Processing by CommentsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  Rendering comments/edit.html.erb within layouts/application
+  Rendered comments/edit.html.erb within layouts/application (5.5ms)
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <h3> Edit your Comment </h3>
+    2: 
+    3: <%= form_for(@comment)  do |f| %>
+    4: 
+    5:     <label> Name:</label><br>
+    6:     <%= f.text_field :name %><br>
+  
+app/views/comments/edit.html.erb:3:in `_app_views_comments_edit_html_erb___2131417201353678185_70288592341980'
+  Rendering /home/cesarm/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/cesarm/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/cesarm/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.6ms)
+  Rendering /home/cesarm/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/cesarm/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendering /home/cesarm/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/cesarm/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /home/cesarm/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (71.5ms)
+Started GET "/comments/2/edit" for 127.0.0.1 at 2020-04-14 22:29:35 -0500
+Processing by CommentsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering comments/edit.html.erb within layouts/application
+  Rendered comments/edit.html.erb within layouts/application (25.5ms)
+Completed 200 OK in 114ms (Views: 88.4ms | ActiveRecord: 1.5ms)
+
+
+Started PATCH "/comments/2" for 127.0.0.1 at 2020-04-14 22:29:41 -0500
+Processing by CommentsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wlF0yMH2/rsTJHWJcpeDJLqy67PtVfKci2NjBAcIgMgp9qBWYMyauDJvaxwGH8QgbGtM9UTUrK/MFfd3Y9OZTA==", "comment"=>{"name"=>"cesar", "username"=>"121212", "body"=>"i hatee ice"}, "commit"=>"Submit Comment", "id"=>"2"}
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.8ms)[0m  [1m[33mUPDATE "comments" SET "body" = ?, "updated_at" = ? WHERE "comments"."id" = ?[0m  [["body", "i hatee ice"], ["updated_at", "2020-04-15 03:29:41.364126"], ["id", 2]]
+  [1m[35m (4.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/comments/2
+Completed 302 Found in 19ms (ActiveRecord: 7.3ms)
+
+
+Started GET "/comments/2" for 127.0.0.1 at 2020-04-14 22:29:41 -0500
+Processing by CommentsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering comments/show.html.erb within layouts/application
+  Rendered comments/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 70ms (Views: 63.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/comments" for 127.0.0.1 at 2020-04-14 22:29:45 -0500
+Processing by CommentsController#index as HTML
+  Rendering comments/index.html.erb within layouts/application
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  Rendered comments/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 80ms (Views: 70.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/comments/2/edit" for 127.0.0.1 at 2020-04-14 22:30:05 -0500
+Processing by CommentsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering comments/edit.html.erb within layouts/application
+  Rendered comments/edit.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 93ms (Views: 85.4ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/comments/2" for 127.0.0.1 at 2020-04-14 22:30:12 -0500
+Processing by CommentsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SSLphOlAzM8geQwef8Psh6VP2IEc44xHmV74t0a4eTmihT0aSHqozAEyEosLS6uDc5Z/x7Vi0nTeKGzEImNgvQ==", "comment"=>{"name"=>"cesar", "username"=>"121212", "body"=>"i hatee marshes"}, "commit"=>"Submit Comment", "id"=>"2"}
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.9ms)[0m  [1m[33mUPDATE "comments" SET "body" = ?, "updated_at" = ? WHERE "comments"."id" = ?[0m  [["body", "i hatee marshes"], ["updated_at", "2020-04-15 03:30:12.835954"], ["id", 2]]
+  [1m[35m (4.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/comments/2
+Completed 302 Found in 26ms (ActiveRecord: 7.8ms)
+
+
+Started GET "/comments/2" for 127.0.0.1 at 2020-04-14 22:30:12 -0500
+Processing by CommentsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering comments/show.html.erb within layouts/application
+  Rendered comments/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 73ms (Views: 64.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/comments/2/edit" for 127.0.0.1 at 2020-04-14 22:30:16 -0500
+Processing by CommentsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering comments/edit.html.erb within layouts/application
+  Rendered comments/edit.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 81ms (Views: 69.5ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/comments/2/edit" for 127.0.0.1 at 2020-04-14 22:30:20 -0500
+  
+ActionController::RoutingError (No route matches [DELETE] "/comments/2/edit"):
+  
+actionpack (5.0.7.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+actionpack (5.0.7.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.7.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.7.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.7.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.7.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.7.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.7.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.7.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.7.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.7.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.7.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.7.1) lib/rails/engine.rb:522:in `call'
+rack (2.0.6) lib/rack/handler/webrick.rb:86:in `service'
+/home/cesarm/.rvm/rubies/ruby-2.6.1/lib/ruby/2.6.0/webrick/httpserver.rb:140:in `service'
+/home/cesarm/.rvm/rubies/ruby-2.6.1/lib/ruby/2.6.0/webrick/httpserver.rb:96:in `run'
+/home/cesarm/.rvm/rubies/ruby-2.6.1/lib/ruby/2.6.0/webrick/server.rb:307:in `block in start_thread'
+  Rendering /home/cesarm/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /home/cesarm/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/cesarm/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.9ms)
+  Rendered collection of /home/cesarm/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [25 times] (9.1ms)
+  Rendered /home/cesarm/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (5.1ms)
+  Rendering /home/cesarm/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/cesarm/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/cesarm/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (92.0ms)
+Started DELETE "/comments/2/edit" for 127.0.0.1 at 2020-04-14 22:30:58 -0500
+  
+ActionController::RoutingError (No route matches [DELETE] "/comments/2/edit"):
+  
+actionpack (5.0.7.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+actionpack (5.0.7.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.7.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.7.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.7.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.7.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.7.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.7.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.7.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.7.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.7.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.7.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.7.1) lib/rails/engine.rb:522:in `call'
+rack (2.0.6) lib/rack/handler/webrick.rb:86:in `service'
+/home/cesarm/.rvm/rubies/ruby-2.6.1/lib/ruby/2.6.0/webrick/httpserver.rb:140:in `service'
+/home/cesarm/.rvm/rubies/ruby-2.6.1/lib/ruby/2.6.0/webrick/httpserver.rb:96:in `run'
+/home/cesarm/.rvm/rubies/ruby-2.6.1/lib/ruby/2.6.0/webrick/server.rb:307:in `block in start_thread'
+  Rendering /home/cesarm/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /home/cesarm/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/cesarm/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered collection of /home/cesarm/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [25 times] (5.3ms)
+  Rendered /home/cesarm/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (0.9ms)
+  Rendering /home/cesarm/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/cesarm/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /home/cesarm/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (92.9ms)
+Started GET "/comments" for 127.0.0.1 at 2020-04-14 22:31:02 -0500
+Processing by CommentsController#index as HTML
+  Rendering comments/index.html.erb within layouts/application
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  Rendered comments/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 82ms (Views: 72.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/comments/2/edit" for 127.0.0.1 at 2020-04-14 22:31:07 -0500
+Processing by CommentsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering comments/edit.html.erb within layouts/application
+  Rendered comments/edit.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 78ms (Views: 69.6ms | ActiveRecord: 0.4ms)
+
+
+Started PATCH "/comments/2" for 127.0.0.1 at 2020-04-14 22:31:14 -0500
+Processing by CommentsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9mEFCqx5BiDkOfgDpi72M8+HRJ/OM1s2fJnsyf/p20EdxtGUDUNiI8Vy5pbSprE3GV7j2WeyBQU773i6mzLCxQ==", "comment"=>{"name"=>"cesar", "username"=>"121212", "body"=>"i hatee water"}, "commit"=>"Submit Comment", "id"=>"2"}
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (17.3ms)[0m  [1m[33mUPDATE "comments" SET "body" = ?, "updated_at" = ? WHERE "comments"."id" = ?[0m  [["body", "i hatee water"], ["updated_at", "2020-04-15 03:31:14.711327"], ["id", 2]]
+  [1m[35m (3.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/comments/2
+Completed 302 Found in 32ms (ActiveRecord: 20.7ms)
+
+
+Started GET "/comments/2" for 127.0.0.1 at 2020-04-14 22:31:14 -0500
+Processing by CommentsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering comments/show.html.erb within layouts/application
+  Rendered comments/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 71ms (Views: 62.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/comments" for 127.0.0.1 at 2020-04-14 22:31:18 -0500
+Processing by CommentsController#index as HTML
+  Rendering comments/index.html.erb within layouts/application
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  Rendered comments/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 81ms (Views: 75.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/comments/2/edit" for 127.0.0.1 at 2020-04-14 22:31:23 -0500
+Processing by CommentsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering comments/edit.html.erb within layouts/application
+  Rendered comments/edit.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 87ms (Views: 75.4ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/comments/2" for 127.0.0.1 at 2020-04-14 22:31:28 -0500
+Processing by CommentsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"kgpmjuOXK4FK3nRi21SeDuuc8hXvHI+FT+KUrko/gw55rbIQQq1PgmuVavev3NkKPUVVU0ad0bYIlADdLuSaig==", "id"=>"2"}
+  [1m[36mComment Load (0.6ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (28.4ms)[0m  [1m[31mDELETE FROM "comments" WHERE "comments"."id" = ?[0m  [["id", 2]]
+  [1m[35m (2.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/comments
+Completed 302 Found in 41ms (ActiveRecord: 32.0ms)
+
+
+Started GET "/comments" for 127.0.0.1 at 2020-04-14 22:31:28 -0500
+Processing by CommentsController#index as HTML
+  Rendering comments/index.html.erb within layouts/application
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  Rendered comments/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 75ms (Views: 69.3ms | ActiveRecord: 0.3ms)
+
+
