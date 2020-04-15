@@ -1,0 +1,24 @@
+<h3> Create a Recipe </h3>
+
+<%= form_tag recipes_path do %>
+
+    <label> Name:</label><br>
+    <%= text_field_tag :"recipe[name]" %><br>
+
+    <label>Username:</label><br>
+    <%= text_field_tag :"recipe[username]" %><br>
+
+    <label>Recipe Description:</label><br>
+    <%= text_area_tag :"recipe[description]" %><br>
+
+    <label>Recipe instructions:</label><br>
+    <%= text_area_tag :"recipe[instructions]" %><br>
+
+    <label>Recipe ingredients:</label><br>
+    <%= text_area_tag :"recipe[ingredients]" %><br>
+
+
+   
+
+    <%= submit_tag "Submit recipe" %>
+<% end %>

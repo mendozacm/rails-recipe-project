@@ -3912,3 +3912,46 @@ Processing by CommentsController#new as HTML
 Completed 200 OK in 117ms (Views: 109.9ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/recipes/new" for 127.0.0.1 at 2020-04-14 20:56:02 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by RecipesController#new as HTML
+  Rendering recipes/new.html.erb within layouts/application
+  Rendered recipes/new.html.erb within layouts/application (12.8ms)
+Completed 200 OK in 333ms (Views: 313.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/recipes" for 127.0.0.1 at 2020-04-14 20:56:50 -0500
+Processing by RecipesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mXU6Wd29zgfZE51p7Fn+Xp9zS6CHNVF6bubgmdtbBS5y0u7HfIeqBPhYg/yY0blaSars5i60D0kpkHTqv4Acqg==", "recipe"=>{"name"=>"fetuccini", "username"=>"ilovefanny", "description"=>"creamy rich alfredo sauce", "instructions"=>"mix that shit together", "ingredients"=>"1 lb pepper\r\n3 lbs salt"}, "commit"=>"Submit recipe"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.7ms)[0m  [1m[32mINSERT INTO "recipes" ("name", "username", "description", "instructions", "ingredients", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "fetuccini"], ["username", "ilovefanny"], ["description", "creamy rich alfredo sauce"], ["instructions", "mix that shit together"], ["ingredients", "1 lb pepper\r\n3 lbs salt"], ["created_at", "2020-04-15 01:56:50.732819"], ["updated_at", "2020-04-15 01:56:50.732819"]]
+  [1m[35m (5.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/recipes/1
+Completed 302 Found in 115ms (ActiveRecord: 9.5ms)
+
+
+Started GET "/recipes/1" for 127.0.0.1 at 2020-04-14 20:56:50 -0500
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/show.html.erb within layouts/application
+  Rendered recipes/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 88ms (Views: 73.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/recipes/1" for 127.0.0.1 at 2020-04-14 20:57:10 -0500
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/show.html.erb within layouts/application
+  Rendered recipes/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 99ms (Views: 89.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/recipes" for 127.0.0.1 at 2020-04-14 20:57:17 -0500
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.erb within layouts/application
+  Rendered recipes/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 95ms (Views: 85.4ms | ActiveRecord: 0.0ms)
+
+
