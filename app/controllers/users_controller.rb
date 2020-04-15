@@ -15,7 +15,7 @@ class UsersController < ApplicationController
     @user = User.create(user_params(:name, :bio, :username, :password, :password_confirmation))
     return redirect_to controller: 'users', action: 'new' unless @user.save
     session[:user_id] = @user.id
-    redirect_to users_path(@user)
+    redirect_to controller: 'welcome', action: 'home'
   end
 
   def edit
