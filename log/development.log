@@ -6467,3 +6467,34 @@ Processing by RecipesController#show as HTML
 Completed 200 OK in 110ms (Views: 97.2ms | ActiveRecord: 0.4ms)
 
 
+Started GET "/comments/new" for 127.0.0.1 at 2020-04-15 12:53:29 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CommentsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendering comments/new.html.erb within layouts/application
+  Rendered comments/new.html.erb within layouts/application (14.7ms)
+Completed 200 OK in 411ms (Views: 364.0ms | ActiveRecord: 2.3ms)
+
+
+Started POST "/comments" for 127.0.0.1 at 2020-04-15 12:54:02 -0500
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mETBMGXFZjR6zcnHndVBSkVnkvTUyNpT8ABMA5ZvFzlz4xWuxP8CN1uG11LpXQZOk741sn1JhGC3dthw8rQOvQ==", "comment"=>{"name"=>"This food is delicious", "username"=>"cesar121", "body"=>"i love this recipe so so so so much!"}, "commit"=>"Submit Comment"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (4.4ms)[0m  [1m[32mINSERT INTO "comments" ("name", "username", "body", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "This food is delicious"], ["username", "cesar121"], ["body", "i love this recipe so so so so much!"], ["user_id", 13], ["created_at", "2020-04-15 17:54:02.225268"], ["updated_at", "2020-04-15 17:54:02.225268"]]
+  [1m[35m (70.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/comments/3
+Completed 302 Found in 119ms (ActiveRecord: 76.9ms)
+
+
+Started GET "/comments/3" for 127.0.0.1 at 2020-04-15 12:54:02 -0500
+Processing by CommentsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering comments/show.html.erb within layouts/application
+  Rendered comments/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 87ms (Views: 71.4ms | ActiveRecord: 0.8ms)
+
+
