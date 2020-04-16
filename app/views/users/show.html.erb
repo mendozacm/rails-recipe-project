@@ -10,11 +10,15 @@
 
     <h2><%= @user.username %> </h2> has commented on the following recipes:
  
-<% @user.recipes.each do |recipe| %>
-  <%= link_to recipe.name, recipe_path(recipe) %>
+<% @user.recipes.each do |recipe| %><br>
+  Recipe  <%= link_to recipe.name, recipe_path(recipe) %>
 <% end %>
 
 
- 
+
+
+<% @user.comments.each do |comment| %><br>
+   Comment  <%= link_to comment.name, comment_path(comment) %>
+  <% end %>
    
  
