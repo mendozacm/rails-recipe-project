@@ -8,8 +8,8 @@
    User_id: <%= @recipe.user_id %><br>
    Recipe id: <%= @recipe.id %><br>
 
-   Comment:
-   <%= link_to "/comments/new", new_comment_path(@comment) %> said
+  
+   <%= link_to "create comment", new_comment_path(@comment)%>
 
   <br> Comments:
   <% @recipe.comments.each do |comment| %>

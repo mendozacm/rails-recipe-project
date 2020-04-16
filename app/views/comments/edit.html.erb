@@ -11,9 +11,13 @@
     <label>Comment body:</label><br>
     <%= f.text_area :body %><br>
 
+    <%= f.collection_check_boxes :recipe_id, Recipe.all, :id, :name %>
+
    
 
     <%= submit_tag "Submit Comment" %>
 <% end %>
+
+
 
 <%= button_to "Delete", @comment, method: :delete, data: { confirm: "Really?" } %>

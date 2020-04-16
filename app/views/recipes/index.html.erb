@@ -6,7 +6,11 @@
    Description: <%= recipe.description %><br>
    Instructions: <%= recipe.instructions %><br>
    Ingredients: <%= recipe.ingredients %><br>
-   Recipe ID: <%=recipe.id %>
+   Recipe ID: <%=recipe.id %><br>
+
+   <%= link_to "create comment", controller: "comments", action: "new", id: recipe.id%><br>
+   
+
 
     
     <% end %>
