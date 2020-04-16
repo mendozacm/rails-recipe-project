@@ -13295,3 +13295,213 @@ Processing by RecipesController#show as HTML
 Completed 200 OK in 98ms (Views: 86.7ms | ActiveRecord: 0.6ms)
 
 
+Started GET "/" for 127.0.0.1 at 2020-04-16 12:20:44 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#home as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (12.0ms)
+Completed 200 OK in 397ms (Views: 344.3ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/logout?method=post" for 127.0.0.1 at 2020-04-16 12:20:47 -0500
+Processing by SessionsController#destroy as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UoMMjDaukZ4KYV2GU4BS5EcEagho2AaES/M54Uej8Gq5JNgSl5T1nSsqQxMnCBXgkd3NTsFZWLcMha2SI3jp7g==", "method"=>"post"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-16 12:20:47 -0500
+Processing by WelcomeController#home as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Redirected to http://localhost:3000/login
+Filter chain halted as :require_logged_in rendered or redirected
+Completed 302 Found in 12ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2020-04-16 12:20:47 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (48.7ms)
+Completed 200 OK in 161ms (Views: 146.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2020-04-16 12:20:49 -0500
+Processing by UsersController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 102ms (Views: 92.6ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2020-04-16 12:21:13 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"D+t/43KGWhJyt6LyZ/nM8j+HGN1td9AC8tKlBTlrrTvkTKt907w+EVP8vGcTcYv26V6/m8T2jjG1pDF2XbC0vw==", "user"=>{"name"=>"Cesarin", "username"=>"Pompin", "bio"=>"i like to eat food", "password"=>"[FILTERED]"}, "commit"=>"Submit User"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Pompin"], ["LIMIT", 1]]
+  [1m[35mSQL (2.8ms)[0m  [1m[32mINSERT INTO "users" ("name", "username", "bio", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Cesarin"], ["username", "Pompin"], ["bio", "i like to eat food"], ["created_at", "2020-04-16 17:21:13.927481"], ["updated_at", "2020-04-16 17:21:13.927481"], ["password_digest", "$2a$12$FJTJfXMghNP6ZWKrKi820eGJKk1BZRa67jYU69g2P1MaIRUssELD6"]]
+  [1m[35m (2.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? AND ("users"."id" != ?) LIMIT ?[0m  [["username", "Pompin"], ["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 288ms (ActiveRecord: 6.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-16 12:21:13 -0500
+Processing by WelcomeController#home as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 72ms (Views: 62.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/recipes" for 127.0.0.1 at 2020-04-16 12:21:26 -0500
+Processing by RecipesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.6ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  Rendered recipes/index.html.erb within layouts/application (25.8ms)
+Completed 200 OK in 126ms (Views: 105.5ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/comments/new?id=1" for 127.0.0.1 at 2020-04-16 12:21:31 -0500
+Processing by CommentsController#new as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering comments/new.html.erb within layouts/application
+  Rendered comments/new.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 99ms (Views: 86.7ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/comments" for 127.0.0.1 at 2020-04-16 12:22:01 -0500
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"av8NASMFgsG//zNOeAe9zHxjHS6yUYL2fxaoRyf6a/eBWNmfgj/mwp60LdsMj/rIqrq6aBvQ3MU4YDw0QyFycw==", "comment"=>{"name"=>"worst of the worst! ", "body"=>"🤦‍♀️", "recipe_id"=>"1", "username"=>"Pompin"}, "commit"=>"Submit Comment"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (3.2ms)[0m  [1m[32mINSERT INTO "comments" ("name", "username", "body", "user_id", "recipe_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "worst of the worst! "], ["username", "Pompin"], ["body", "🤦‍♀️"], ["user_id", 2], ["recipe_id", 1], ["created_at", "2020-04-16 17:22:01.241610"], ["updated_at", "2020-04-16 17:22:01.241610"]]
+  [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/comments/21
+Completed 302 Found in 189ms (ActiveRecord: 7.7ms)
+
+
+Started GET "/comments/21" for 127.0.0.1 at 2020-04-16 12:22:01 -0500
+Processing by CommentsController#show as HTML
+  Parameters: {"id"=>"21"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  Rendering comments/show.html.erb within layouts/application
+  Rendered comments/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 81ms (Views: 66.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/recipes/1" for 127.0.0.1 at 2020-04-16 12:22:12 -0500
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mRecipe Load (0.6ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/show.html.erb within layouts/application
+  [1m[36mComment Load (0.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."recipe_id" = ?[0m  [["recipe_id", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered recipes/show.html.erb within layouts/application (91.5ms)
+Completed 200 OK in 184ms (Views: 161.0ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2020-04-16 12:22:15 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" INNER JOIN "comments" ON "recipes"."id" = "comments"."recipe_id" WHERE "comments"."user_id" = ?[0m  [["user_id", 2]]
+  Rendered users/show.html.erb within layouts/application (22.2ms)
+Completed 200 OK in 104ms (Views: 88.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/recipes/1" for 127.0.0.1 at 2020-04-16 12:22:22 -0500
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/show.html.erb within layouts/application
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."recipe_id" = ?[0m  [["recipe_id", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered recipes/show.html.erb within layouts/application (25.7ms)
+Completed 200 OK in 104ms (Views: 93.2ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2020-04-16 12:23:10 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.4ms)
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 0.5ms)
+
+
+  
+SyntaxError (/mnt/c/Users/mendo/dev/flatiron/labs/rails-recipe-project/app/views/users/show.html.erb:21: syntax error, unexpected ensure, expecting end-of-input
+          ensure
+          ^~~~~~):
+  
+app/views/users/show.html.erb:21: syntax error, unexpected ensure, expecting end-of-input
+  Rendering /home/cesarm/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/cesarm/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/cesarm/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.1ms)
+  Rendering /home/cesarm/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/cesarm/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendering /home/cesarm/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/cesarm/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /home/cesarm/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (74.8ms)
+Started GET "/users/2" for 127.0.0.1 at 2020-04-16 12:23:17 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" INNER JOIN "comments" ON "recipes"."id" = "comments"."recipe_id" WHERE "comments"."user_id" = ?[0m  [["user_id", 2]]
+  Rendered users/show.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 97ms (Views: 83.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/recipes/1" for 127.0.0.1 at 2020-04-16 12:23:21 -0500
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/show.html.erb within layouts/application
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."recipe_id" = ?[0m  [["recipe_id", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered recipes/show.html.erb within layouts/application (36.4ms)
+Completed 200 OK in 138ms (Views: 125.0ms | ActiveRecord: 1.3ms)
+
+
