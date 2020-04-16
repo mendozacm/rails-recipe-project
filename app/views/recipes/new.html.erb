@@ -2,11 +2,13 @@
 
 <%= form_tag recipes_path do %>
 
-    <label> Name:</label><br>
+    <label>Username:</label><br>
+    <%= @user.username %><br>
+
+   <br> <label> Recipe Name:</label><br>
     <%= text_field_tag :"recipe[name]" %><br>
 
-    <label>Username:</label><br>
-    <%= text_field_tag :"recipe[username]" %><br>
+
 
     <label>Recipe Description:</label><br>
     <%= text_area_tag :"recipe[description]" %><br>
@@ -18,7 +20,8 @@
     <%= text_area_tag :"recipe[ingredients]" %><br>
 
 
-   
+    <%= hidden_field_tag :"recipe[username]", @user.username %>
+
 
     <%= submit_tag "Submit recipe" %>
 <% end %>

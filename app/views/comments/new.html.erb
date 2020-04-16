@@ -2,19 +2,20 @@
 
 <%= form_tag comments_path do %>
 
+    <label>Username:</label><br>
+    <%= @user.name %><br>
 
-
-    <label> Name:</label><br>
+   <br> <label> Name:</label><br>
     <%= text_field_tag :"comment[name]" %><br>
 
-    <label>Username:</label><br>
-    <%= text_field_tag :"comment[username]" %><br>
+
 
     <label>Comment body:</label><br>
     <%= text_area_tag :"comment[body]" %><br>
 
 
     <%= hidden_field_tag :"comment[recipe_id]", params[:id] %>
+    <%= hidden_field_tag :"comment[username]", @user.username %>
 
 
     <%= submit_tag "Submit Comment" %>
