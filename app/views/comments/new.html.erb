@@ -13,11 +13,12 @@
     <label>Comment body:</label><br>
     <%= text_area_tag :"comment[body]" %><br>
 
-    
 
-    Recipe Id: <%= (params[:id]) %><br>
+    <%= hidden_field_tag :"comment[recipe_id]", params[:id] %>
+
 
     <%= submit_tag "Submit Comment" %>
+
 <% end %>
 
 

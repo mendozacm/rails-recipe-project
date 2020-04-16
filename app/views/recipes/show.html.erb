@@ -9,7 +9,7 @@
    Recipe id: <%= @recipe.id %><br>
 
   
-   <%= link_to "create comment", new_comment_path(@comment)%>
+   <%= link_to "create comment", new_comment_path(@comment), id: (@recipe.id)%>
 
   <br> Comments:
   <% @recipe.comments.each do |comment| %>

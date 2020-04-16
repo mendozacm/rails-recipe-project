@@ -9,7 +9,7 @@ class CommentsController < ApplicationController
   end
 
   def new
- @recipe = (params[:id])
+ 
 
   end
 
@@ -17,7 +17,7 @@ class CommentsController < ApplicationController
     
     @comment = Comment.new(comment_params)
     @comment.user_id = current_user.id
-    @recipe = (params[:id])
+    
     @comment.save
     
     redirect_to comment_path(@comment)
@@ -42,7 +42,7 @@ class CommentsController < ApplicationController
   private
 
   def comment_params
-    params.require(:comment).permit(:name, :username, :body, :user_id, category_ids:[])
+    params.require(:comment).permit(:name, :username, :body, :user_id, :recipe_id, category_ids:[])
   end
 
 end
