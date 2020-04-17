@@ -15,15 +15,15 @@
 
     <%= hidden_field_tag :"recipe[username]", @user.username %>
 
-  <h3>Ingredients</h3>
-    <%= f.fields_for :"recipe[ingredient]" do |ri| %>
-        <%= ri.label :quantity %>
-        <%= ri.text_field :quantity %>
+    <h3>Ingredients</h3>
+    <%= field_set_tag @ingredient do %>
+
 
         
-            <%= ri.label :name %>
-            <%= ri.text_field :ingredient_name %>
+           
+            <%= text_field_tag :ingredient_name %>
             <% end %>
+
            
 
 

@@ -38,9 +38,12 @@ ActiveRecord::Schema.define(version: 20200416191421) do
     t.string   "username"
     t.text     "description"
     t.text     "instructions"
+    t.string   "ingredient"
+    t.string   "ingredient_name"
+    t.integer  "ingredient_amount"
     t.integer  "user_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
     t.index ["user_id"], name: "index_recipes_on_user_id"
   end
 
