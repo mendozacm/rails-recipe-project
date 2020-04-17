@@ -1,13 +1,9 @@
 Rails.application.routes.draw do
  
 
-  get 'ingredients/new'
 
-  get 'ingredients/create'
+  resources :ingredients, only: [:index, :create, :new, :show, :update, :edit, :destroy]
 
-  get 'ingredients/index'
-
-  get 'ingredients/show'
 
   resources :users, only: [:index, :create, :new, :show, :update, :edit, :destroy]
 

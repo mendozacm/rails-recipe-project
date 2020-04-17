@@ -5,26 +5,26 @@
     <label> Name:</label><br>
     <%= f.text_field :name %><br>
 
-    <label>Username:</label><br>
-    <%= f.text_field :username %><br>
-
     <label>Recipe Description:</label><br>
     <%= f.text_area :description %><br>
 
     <label>Recipe instructions:</label><br>
     <%= f.text_area :instructions %><br>
 
-    <label>Recipe ingredients:</label><br>
-    <%= f.text_area :ingredients %><br>
-
-
-
    
-
 
     <%= hidden_field_tag :"recipe[username]", @user.username %>
 
-  
+  <h3>Ingredients</h3>
+    <%= f.fields_for :"recipe[ingredient]" do |ri| %>
+        <%= ri.label :quantity %>
+        <%= ri.text_field :quantity %>
+
+        
+            <%= ri.label :name %>
+            <%= ri.text_field :ingredient_name %>
+            <% end %>
+           
 
 
     <%= f.submit  %>

@@ -1,2 +1,9 @@
-<h1>Ingredients#new</h1>
-<p>Find me in app/views/ingredients/new.html.erb</p>
+<h3> Missing an ingredient you use? Add an Ingredient </h3>
+
+<%= form_for :ingredient, as: :post, url: ingredients_path do |f| %>
+
+    <label> Name:</label><br>
+    <%= f.text_field :ingredient_name %><br>
+
+    <%= f.submit  %>
+<% end %>
