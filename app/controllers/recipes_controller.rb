@@ -14,13 +14,18 @@ class RecipesController < ApplicationController
   def create
     @recipe = Recipe.new(recipe_params)
     @recipe.user_id = current_user.id
-    @ingredient = Ingredient.new(ingredient_params)
-    @ingredient.save
+
+  
+    @ingredient = Ingredient.create(ingredient_params)
+    
+      
 
     @recipe.save
     
     redirect_to recipe_path(@recipe)
   end
+
+
 
   def edit
     @recipe = Recipe.find(params[:id])
@@ -41,7 +46,7 @@ class RecipesController < ApplicationController
   private
 
   def ingredient_params
-    params.permit(:ingredient_name)
+    params.permit(:ingredient_name, :recipe_id)
   end
 
 

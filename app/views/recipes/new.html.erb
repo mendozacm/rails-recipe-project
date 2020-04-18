@@ -17,12 +17,10 @@
 
     <h3>Ingredients</h3>
     <%= field_set_tag @ingredient do %>
+    <%= text_field_tag :ingredient_name %>
+    <%= hidden_field_tag :"[recipe_id]", Recipe.maximum(:id) + 1 %>
 
-
-        
-           
-            <%= text_field_tag :ingredient_name %>
-            <% end %>
+     <% end %>
 
            
 
