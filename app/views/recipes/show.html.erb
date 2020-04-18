@@ -7,11 +7,10 @@
    
    User_id: <%= @recipe.user_id %><br>
    Recipe id: <%= @recipe.id %><br>
-
-   Ingredients: <%= @recipe.ingredients.each do |i| %><br>
+    <% @recipe.ingredients.each do |i| %>
     Ingredient name: <%= i.ingredient_name %><br>
      Ingredient id:<%= i.recipe_id %><br>
-     <% end %>
+     <br><% end %>
 
   <br> Comments:
   <% @recipe.comments.each do |comment| %>
@@ -19,7 +18,3 @@
     <%= comment.body %>
   <% end %>
 
-  Ingredients: <%= @recipe.ingredients.each do |i| %><br>
-    Ingredient name: <%= i.ingredient_name %><br>
-     Ingredient id:<%= i.recipe_id %><br>
-     <% end %>

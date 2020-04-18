@@ -16,7 +16,10 @@ class RecipesController < ApplicationController
     @recipe.user_id = current_user.id
 
   
-    @ingredient = Ingredient.create(ingredient_params)
+    @ingredient = Ingredient.new
+    @ingredient.ingredient_name = (params[:ingredient_name])
+    @ingredient.recipe_id = (params[:recipe_id])
+    @ingredient.save
     
       
 
