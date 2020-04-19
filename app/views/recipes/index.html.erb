@@ -7,11 +7,16 @@
    Instructions: <%= recipe.instructions %><br>
    <% recipe.ingredients.each do |i| %>
       Ingredient name: <%= i.ingredient_name %><br>
-       Ingredient id:<%= i.recipe_id %><br>
-       <br><% end %>
-   Recipe ID: <%=recipe.id %><br>
+ 
+       <% end %>
+       <br> Comments:
+  <% recipe.comments.each do |comment| %>
+    <%= link_to comment.user.username, user_path(comment.user) %> said
+    <%= comment.body %>
+  <% end %>
+   
 
-   <%= link_to "create comment", controller: "comments", action: "new", id: recipe.id%><br>
+   <br><%= link_to "create comment", controller: "comments", action: "new", id: recipe.id%><br>
    
 
 
