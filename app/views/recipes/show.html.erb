@@ -1,21 +1,27 @@
 
+<% @recipes.each do |recipe|%><br><li>
 
-   Name: <%= @recipe.name %><br>
-   Username: <%= @recipe.username %><br>
-   Description: <%= @recipe.description %><br>
-   Instructions: <%= @recipe.instructions %><br>
+   Name: <%= recipe.name %><br>
+   Username: <%= recipe.username %><br>
+   Description: <%= recipe.description %><br>
+   Instructions: <%= recipe.instructions %><br>
    
-   User_id: <%= @recipe.user_id %><br>
-   Recipe id: <%= @recipe.id %><br>
-    <% @recipe.ingredients.each do |i| %>
+   User_id: <%= recipe.user_id %><br>
+   Recipe id: <%= recipe.id %><br>
+    <% recipe.ingredients.each do |i| %>
     Ingredient name: <%= i.ingredient_name %><br>
      Recipe id:<%= i.recipe_id %><br>
      Ingredient id: <%= i.id %>
      <br><% end %>
 
   <br> Comments:
-  <% @recipe.comments.each do |comment| %>
+  <% recipe.comments.each do |comment| %>
     <%= link_to comment.user.username, user_path(comment.user) %> said
     <%= comment.body %>
   <% end %>
+
+  
+
+  <% end %>
+  <%= render 'links' %>
 

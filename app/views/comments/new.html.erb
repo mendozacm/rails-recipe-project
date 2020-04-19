@@ -22,5 +22,12 @@
 
 <% end %>
 
+<br><%= link_to "Create a recipe", "/recipes/new" %><br>
+<%= link_to "View all recipes", "/recipes" %><br>
+
+<%= form_tag ({controller: 'sessions', action: 'destroy', method: 'post'}) do %>
+  <input type=submit value='logout'>
+<% end %>
+
 
 

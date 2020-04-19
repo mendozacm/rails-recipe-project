@@ -5,7 +5,7 @@ class CommentsController < ApplicationController
   end
 
   def show
-      @comment = Comment.find(params[:id])
+      @comments = Comment.where(user_id:(current_user.id))
   end
 
   def new

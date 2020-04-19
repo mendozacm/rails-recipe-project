@@ -1,11 +1,10 @@
 class RecipesController < ApplicationController
   def index
-   
     @recipes = Recipe.all
   end
 
   def show
-      @recipe = Recipe.find(params[:id])
+      @recipes = Recipe.where(user_id:(current_user.id))
   end
 
   def new
@@ -16,14 +15,11 @@ class RecipesController < ApplicationController
   def create
     @recipe = Recipe.new(recipe_params)
     @recipe.user_id = current_user.id
-
-  
-
-
     @recipe.save
-    
     redirect_to recipe_path(@recipe)
   end
+
+
 
 
 

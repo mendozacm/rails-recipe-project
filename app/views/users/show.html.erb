@@ -18,7 +18,7 @@
 
 
 <% @user.comments.each do |comment| %><br>
-   Comment  <%= link_to comment.name, comment_path(comment) %>
+   Comment  <%= link_to comment.name, recipe_path(recipe_url) %>
   <% end %>
    
  

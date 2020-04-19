@@ -17,10 +17,11 @@
 
    
     <h3>Ingredients</h3>
+ 
     
-    <%= f.fields_for :ingredients do |builder| %>
-        
-    <%= render 'recipe_ingredient_form', :f => builder %> <br>
+    <%= f.fields_for :ingredients do |ing| %>
+    <%= ing.label :ingredient_name, "Ingredient Name:" %>
+    <%= ing.text_field :ingredient_name %>
 
          
     <%= hidden_field_tag :"recipe[ingredient_id]", [:id] %>
@@ -35,4 +36,4 @@
 
 
 
-
+<%= render 'links' %>
