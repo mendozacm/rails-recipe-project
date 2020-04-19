@@ -19,14 +19,15 @@
     
     <%= f.fields_for :ingredients do |builder| %>
         
-            <%= render 'recipe_ingredient_form', :f => builder %> <br>
+    <%= render 'recipe_ingredient_form', :f => builder %> <br>
+
          
-     <% end %>
+     
 
 
            
 
-
+<% end %>
     <%= f.submit  %>
 <% end %>
 
