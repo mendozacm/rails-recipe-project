@@ -9,7 +9,8 @@
    Recipe id: <%= @recipe.id %><br>
     <% @recipe.ingredients.each do |i| %>
     Ingredient name: <%= i.ingredient_name %><br>
-     Ingredient id:<%= i.recipe_id %><br>
+     Recipe id:<%= i.recipe_id %><br>
+     Ingredient id: <%= i.id %>
      <br><% end %>
 
   <br> Comments:

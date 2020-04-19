@@ -5,9 +5,8 @@ class CreateRecipes < ActiveRecord::Migration[5.0]
       t.string :username
       t.text :description
       t.text :instructions
-      t.string :ingredient
-      t.string :ingredient_name
-      t.integer :ingredient_amount
+      t.string :ingredients
+      t.integer :ingredient_id
       
       t.integer :user_id
       t.belongs_to :user
