@@ -6,7 +6,6 @@ Rails.application.routes.draw do
   resources :ingredients, only: [:index, :create, :new, :show, :update, :edit, :destroy]
 
 
-  resources :users, only: [:index, :create, :new, :show, :update, :edit, :destroy]
 
   resources :recipes, only: [:index, :create, :new, :show, :update, :edit, :destroy]
 
