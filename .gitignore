@@ -44,4 +44,4 @@ jspm_packages
 !/log/.keep
 /tmp
 
-#.env
+.env

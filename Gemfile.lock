@@ -65,6 +65,12 @@ GEM
     crass (1.0.4)
     daemons (1.3.1)
     database_cleaner (1.7.0)
+    devise (4.7.1)
+      bcrypt (~> 3.0)
+      orm_adapter (~> 0.1)
+      railties (>= 4.1.0)
+      responders
+      warden (~> 1.2.3)
     diff-lcs (1.3)
     dotenv (2.7.5)
     dotenv-rails (2.7.5)
@@ -108,6 +114,7 @@ GEM
     nio4r (2.3.1)
     nokogiri (1.10.1)
       mini_portile2 (~> 2.4.0)
+    oauth (0.5.4)
     oauth2 (1.4.4)
       faraday (>= 0.8, < 2.0)
       jwt (>= 1.0, < 3.0)
@@ -119,9 +126,20 @@ GEM
       rack (>= 1.6.2, < 3)
     omniauth-facebook (6.0.0)
       omniauth-oauth2 (~> 1.2)
+    omniauth-github (1.4.0)
+      omniauth (~> 1.5)
+      omniauth-oauth2 (>= 1.4.0, < 2.0)
+    omniauth-google (1.0.2)
+      multi_json
+      omniauth (~> 1.0)
+      omniauth-oauth
+    omniauth-oauth (1.1.0)
+      oauth
+      omniauth (~> 1.0)
     omniauth-oauth2 (1.6.0)
       oauth2 (~> 1.1)
       omniauth (~> 1.9)
+    orm_adapter (0.5.0)
     public_suffix (3.0.3)
     rack (2.0.6)
     rack-test (0.6.3)
@@ -155,6 +173,9 @@ GEM
       ffi (~> 1.0)
     rdoc (4.3.0)
     regexp_parser (1.3.0)
+    responders (3.0.0)
+      actionpack (>= 5.0)
+      railties (>= 5.0)
     rspec-core (3.8.0)
       rspec-support (~> 3.8.0)
     rspec-expectations (3.8.2)
@@ -210,6 +231,8 @@ GEM
       thread_safe (~> 0.1)
     uglifier (4.1.20)
       execjs (>= 0.3.0, < 3)
+    warden (1.2.8)
+      rack (>= 2.0.6)
     websocket-driver (0.6.5)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.3)
@@ -226,12 +249,15 @@ DEPENDENCIES
   capybara
   coffee-rails (~> 4.1.0)
   database_cleaner
+  devise
   dotenv-rails
   factory_bot
   jbuilder (~> 2.0)
   jquery-rails
   omniauth
   omniauth-facebook
+  omniauth-github
+  omniauth-google
   rails
   rspec-rails (~> 3.7)
   sass-rails (~> 5.0)

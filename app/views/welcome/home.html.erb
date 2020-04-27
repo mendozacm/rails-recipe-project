@@ -1,9 +1,3 @@
-
-<h1>Hi, <%= @user.name %></h1>
-
-<%= link_to "Create a recipe", "/recipes/new" %><br>
-<%= link_to "View all recipes", "/recipes" %><br>
-
-<%= form_tag ({controller: 'sessions', action: 'destroy', method: 'post'}) do %>
-  <input type=submit value='logout'>
-<% end %>
+<div>
+  <%= link_to "Sign in with GitHub", user_github_omniauth_authorize_path %>
+  </div>

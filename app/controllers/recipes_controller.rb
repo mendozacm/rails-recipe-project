@@ -19,6 +19,11 @@ class RecipesController < ApplicationController
     redirect_to recipe_path(@recipe)
   end
 
+  def search
+    @recipes = Recipe.find_by(params[:ingredient_name])
+  end
+  
+
 
 
 

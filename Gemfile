@@ -27,7 +27,13 @@ gem 'omniauth'
 
 gem 'omniauth-facebook'
 
+gem 'omniauth-google'
+
+gem 'omniauth-github'
+
 gem 'thin'
+
+gem 'devise'
 
 # Use ActiveModel has_secure_password
  gem 'bcrypt', '~> 3.1.7'
